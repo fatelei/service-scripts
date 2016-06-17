@@ -9,6 +9,8 @@
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
 
+ulimit -n 65535
+
 dir=""
 cmd="nsqd"
 
