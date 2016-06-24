@@ -14,7 +14,7 @@ ulimit -n 65535
 dir=""
 cmd="nsqd"
 
-name=`basename $0`
+name="nsqd"
 config="/etc/$name.conf"
 pid_file="/var/run/$name.pid"
 stdout_log="/var/log/$name.log"
