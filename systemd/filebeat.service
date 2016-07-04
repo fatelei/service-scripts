@@ -1,0 +1,11 @@
+[Unit]
+Description = filebeat daemon service
+
+[Service]
+ExecStart = /usr/bin/filebeat -c /etc/filebeat.yml
+Type = simple
+KillMode = process
+Restart = on-failure
+
+[Install]
+WantedBy = multi-user.target

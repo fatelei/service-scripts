@@ -1,2 +1,2 @@
-# init.d-scripts
-Some useful init.d scripts.
+# service scripts
+Some useful init.d & systemd scripts.

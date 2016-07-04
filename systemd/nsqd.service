@@ -1,0 +1,11 @@
+[Unit]
+Description = nsqd daemon service
+
+[Service]
+ExecStart = /usr/bin/nsqd -config /etc/nsqd.conf
+Type = simple
+KillMode = process
+Restart = on-failure
+
+[Install]
+WantedBy = multi-user.target
