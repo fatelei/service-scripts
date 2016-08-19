@@ -15,7 +15,7 @@ dir=""
 cmd="falcon-agent"
 
 name="falcon-agent"
-config="/etc/$name.conf"
+config="/etc/$name.json"
 pid_file="/var/run/$name.pid"
 stdout_log="/var/log/$name.log"
 stderr_log="/var/log/$name.err"
@@ -39,13 +39,13 @@ case "$1" in
             if [ ! -f $config ]; then
                 sudo $cmd >> "$stdout_log" 2>> "$stderr_log" &
             else
-                sudo $cmd -config $config >> "$stdout_log" 2>> "$stderr_log" &
+                sudo $cmd -c $config >> "$stdout_log" 2>> "$stderr_log" &
             fi
         else
             if [ ! -f $config ]; then
                 sudo -u "$user" $cmd >> "$stdout_log" 2>> "$stderr_log" &
             else
-                sudo -u "$user" $cmd -config $config >> "$stdout_log" 2>> "$stderr_log" &
+                sudo -u "$user" $cmd -c $config >> "$stdout_log" 2>> "$stderr_log" &
             fi
         fi
         echo $! > "$pid_file"
